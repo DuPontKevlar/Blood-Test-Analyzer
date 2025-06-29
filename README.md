@@ -274,6 +274,31 @@ curl -X POST "http://localhost:8000/analyze" \
 
 ---
 
+## 🚀 How to Run
+
+```bash
+# Install requirements
+pip install -r requirements.txt
+
+# Run the API
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+## ✅ Example Response
+
+On sending a POST request to `/analyze`, we will get a JSON response like this:
+
+```json
+{
+  "status": "success",
+  "query": "Summarise my Blood Test Report",
+  "analysis": "🩸 Iron & Hemoglobin:\n- Include iron-rich foods like spinach, lentils, and lean meats\n...",
+  "file_processed": "my_blood_report.pdf"
+}
+```
+
+
+
 ## ✅ **Improvements Made**
 
 - Added Redis/Celery for queued processing of large PDF files
